@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins";
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-weight: 500;
+}
+
+:root {
+  --texto-primario: #f8fafc;
+  --texto-secundario: #94a3b8;
+
+  --background-primario: #0b1120;
+  --background-primario-1: #0a1325;
+  --background-secundario: #000000;
+  --background-terceario: #173c98;
+
+  --elementos-verde-primario: #10b981;
+  --elementos-verde-secundario: #23dfa1;
+  --elementos-verde-terceario: #0cffaf;
+
+  --elementos-roxo-primario: #6c2bff;
+  --elementos-roxo-secundario: #8b5cf6;
+  --elementos-roxo-terceario: #b08dff;
+
+  --btn-primario-: #3b82f6;
+  --btn-primario-hover: #4351eb;
+
+  --btn-cta-primary: #455eff;
+  --btn-cta-hover: #100787;
+  --btn-cta-active: #0022ff;
+
+  --link-primario: #1900ff;
+  --link-hover: #130fffab;
+  --link-active: #1114bc;
+
+  --btn-disabled: #e9e9e9;
+  --text-disabled: #8888889f;
+
+  --line-section: #70707036;
+}
+
+body {
+  background-color: var(--background-primario);
+  height: 100%;
+}
+
+.nav-paginas-lateral,
+.btn-menu,
+.btn-fechar, .navegacao-lateral {
+  display: none;
+}
+
+.container-section {
+  width: 1280px;
+  margin: 0 auto;
+
+  padding: 0 10px;
+}
+
+.div-nav-mobile {
+  display: none;
+}
+.btn-menu-mobile {
+  display: none;
+}
+
+#menu-navegacao {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--texto-primario);
+  border-bottom: 1px solid var(--line-section);
+  margin-bottom: 35px;
+}
+
+.nome-escola {
+  position: relative;
+  display: flex;
+  width: 300px;
+  align-items: center;
+}
+
+.nome-escola h2 {
+  margin-left: 60px;
+}
+
+.nome-escola img {
+  position: absolute;
+  width: 60px;
+}
+
+.navegacao {
+  display: flex;
+  padding: 20px;
+  font-size: 0.8rem;
+}
+
+.nav-paginas {
+  color: var(--texto-primario);
+  padding: 10px;
+  text-decoration: none;
+}
+
+.lista-paginas {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.nav-paginas:hover {
+  color: var(--link-hover);
+}
+
+.filtros-cursos{
+    display: flex;
+    border: 1px solid red;
+    width: 100%;
+    ;
+}
+.search-container {
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  top: 35%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #777;
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 5px 10px 10px 35px;
+  font-size: 0.9rem;
+  border: 1px solid var(--text-disabled);
+  border-radius: 8px;
+  outline: none;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background: transparent;
+  color: var(--texto-primario) !important;
+}
+
+.search-input:focus {
+  border-color: #0066cc;
+}

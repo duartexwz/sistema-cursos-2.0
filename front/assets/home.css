@@ -44,13 +44,26 @@
 
 body {
   background-color: var(--background-primario);
+  height: 100%;
+}
+
+.nav-paginas-lateral,
+.btn-menu,
+.btn-fechar {
+  display: none;
 }
 
 .container-section {
   width: 1280px;
   margin: 0 auto;
-  /* border: 1px solid red; */
   padding: 0 10px;
+}
+
+.div-nav-mobile {
+  display: none;
+}
+.btn-menu-mobile {
+  display: none;
 }
 
 #menu-navegacao {
@@ -61,6 +74,7 @@ body {
   align-items: center;
   color: var(--texto-primario);
   border-bottom: 1px solid var(--line-section);
+  margin-bottom: 35px;
 }
 
 .nome-escola {
@@ -82,11 +96,12 @@ body {
 .navegacao {
   display: flex;
   padding: 20px;
+  font-size: 0.8rem;
 }
 
 .nav-paginas {
   color: var(--texto-primario);
-  padding: 20px;
+  padding: 10px;
   text-decoration: none;
 }
 
@@ -97,22 +112,28 @@ body {
 
 .nav-paginas:hover {
   color: var(--link-hover);
+  border-bottom: 2px solid var(--link-hover);
+  transition: all 0.3s ease-in-out;
 }
+
 
 #apresentacao {
   color: var(--texto-primario);
   border-bottom: 1px solid var(--line-section);
   font-size: 0.8rem;
+  margin-bottom: 30px;
 }
 
 .div-apresentacao {
   width: 100%;
   overflow: hidden;
+  height: 100%;
 }
 
 .apresentacao-site {
   display: inline-block;
   width: 50%;
+  text-align: justify;
   font-size: 0.8rem;
 }
 
@@ -157,13 +178,14 @@ body {
 .search-input {
   width: 100%;
   padding: 5px 10px 10px 35px;
-  font-size: 16px;
+  font-size: 0.9rem;
   border: 1px solid var(--text-disabled);
   border-radius: 8px;
   outline: none;
   box-sizing: border-box;
   margin-bottom: 10px;
   background: transparent;
+  color: var(--texto-primario) !important;
 }
 
 .search-input:focus {
@@ -208,6 +230,7 @@ body {
   transition:
     background-color 0.3 ease-in-out,
     transform 0.3s ease;
+  margin-bottom: 30px;
 }
 
 .como-funciona {
@@ -288,7 +311,6 @@ body {
   min-height: 200px;
   margin-right: 10px;
   background-color: var(--background-primario-1);
-  /* border: 1px solid red; */
 }
 
 .cursos-destaques-momento::-webkit-scrollbar {
@@ -296,6 +318,9 @@ body {
 }
 
 .seta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--background-primario-1);
   color: var(--texto-primario);
   border: 1px solid var(--text-disabled);
@@ -370,13 +395,11 @@ body {
   overflow: hidden;
   height: 150px;
   margin-top: 8px;
-  /* border: 1px solid green; */
   padding: 0 10px;
 }
 
 .imagem-curso {
   height: 150px;
-  /* border: 1px solid red; */
 }
 
 .medias-da-escola {
@@ -418,7 +441,6 @@ body {
 .info-alunos {
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
 }
 
 .alunos-matriculados p {
@@ -539,7 +561,7 @@ body {
 
 footer {
   display: flex;
-  height: 120px;
+  height: 100%;
   width: 1280px;
   font-size: 0.7rem;
 }
@@ -548,7 +570,8 @@ footer {
   display: flex;
   color: var(--texto-primario);
   background-color: var(--background-primario-1);
-  height: 120px;
+  height: 100%;
+  overflow: hidden;
 }
 
 .redes-sociais {
@@ -677,20 +700,33 @@ ul {
   color: var(--link-hover);
 }
 
-@media screen and (max-width: 1000px) {
-    
+@media screen and (min-width: 800px) and (max-width: 999px) {
   .container-section {
     width: 850px;
     margin: 0 auto;
     padding: 0 10px;
-    
+
     /* background-color: red; */
   }
-  .container-section p{
+  .nav-paginas-lateral,
+  .btn-menu,
+  .btn-fechar {
+    display: none;
+  }
+  .container-section p {
     font-size: 0.7rem;
   }
-  .container-section button{
-    padding: 8px; 
+  .container-section button {
+    padding: 8px;
+  }
+  .mensagem-de-erro {
+    display: flex;
+    color: var(--texto-secundario);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    margin-left: 25%;
   }
   #menu-navegacao {
     width: 100%;
@@ -700,25 +736,32 @@ ul {
     align-items: center;
     font-size: 0.7rem;
   }
-  .navegacao{
+  .navegacao {
     display: flex;
     padding: 10px;
+    font-size: 0.7rem;
   }
-  .nav-paginas{
+  .nav-paginas {
     padding: 10px;
   }
+  .nav-paginas:hover {
+    color: var(--link-hover);
+    border-bottom: 2px solid var(--link-hover);
+    transition: all 0.3s ease-in-out;
+  }
 
-  .apresentacao-site{
+  .apresentacao-site {
     display: inline-block;
     width: 45%;
     font-size: 0.6rem;
   }
 
-  .explorar-cursos, .como-funciona{
-    padding: 10px 20px 10px 20px; 
+  .explorar-cursos,
+  .como-funciona {
+    padding: 10px 20px 10px 20px;
   }
 
-  .cursos-destaques-wrapper{
+  .cursos-destaques-wrapper {
     position: relative;
     display: flex;
     align-items: center;
@@ -726,7 +769,7 @@ ul {
     height: 100%;
     overflow: hidden;
   }
-  .cursos-destaques-momento{
+  .cursos-destaques-momento {
     /* width: 820px !important; */
     flex: 1;
     min-width: 0;
@@ -749,7 +792,750 @@ ul {
     cursor: pointer;
     z-index: 10;
     flex-shrink: 0;
+  }
+
+  #footer {
+    overflow: hidden;
+    height: 140px;
+  }
+  .navegacao-footer,
+  .suporte,
+  .contato {
+    margin-left: 0px;
+  }
 }
 
+@media screen and (max-width: 600px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
+  body {
+    overflow: hidden;
+    font-size: 0.7rem;
+  }
+
+  .container-section {
+    width: 375px !important;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+  .navegacao {
+    display: none;
+    padding: 5px;
+    /* font-size: 0.8rem; */
+  }
+  .navegacao-lateral {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--background-primario-1);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 60px 20px 20px;
+    opacity: 90%;
+  }
+  .navegacao-lateral.ativo {
+    transform: translateX(0);
+  }
+
+  .nav-paginas-lateral:hover {
+    color: var(--link-hover);
+  }
+  .navegacao-lateral ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .lista-paginas {
+    border-bottom: 1px solid var(--line-section);
+  }
+  .nav-paginas-lateral {
+    display: block;
+    padding: 10px 0;
+    color: var(--texto-primario);
+    text-decoration: none;
+  }
+  .btn-fechar {
+    position: absolute;
+    right: 0 auto;
+    background: none;
+    border: none;
+    color: var(--texto-primario);
+    cursor: pointer;
+    display: flex;
+  }
+
+  .btn-menu {
+    position: relative;
+    background: none;
+    border: none;
+    color: var(--texto-primario);
+    font-size: 2.9rem !important;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    border: none;
+    top: 3%;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .btn-menu span {
+    font-size: 1.5rem !important;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.363);
+    opacity: 40%;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .overlay.ativo {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #apresentacao {
+    font-size: 0.6rem;
+    width: 360px;
+    overflow: hidden;
+    background-size: cover;
+  }
+  #apresentacao::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.575), rgba(0, 0, 0, 0.493)),
+      url("/images/background-image-computer.png");
+    background-size: cover;
+    background-position: center;
+
+    -webkit-mask-image:
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+      );
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+      );
+    mask-composite: intersect;
+  }
+
+  .div-apresentacao {
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+  }
+
+  .apresentacao-site {
+    display: inline-block;
+    width: 100%;
+  }
+  .apresentacao-site h1 {
+    font-size: 1rem;
+  }
+
+  .apresentacao-site p {
+    font-size: 0.5rem;
+  }
+
+  .search-container {
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 345px;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 12px 10px 12px 28px;
+    border: 1px solid var(--text-disabled);
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    background: transparent;
+    height: 20px;
+    color: var(--texto-primario) !important;
+    font-size: 0.6rem;
+  }
+  .search-input::placeholder {
+    font-size: 0.5rem !important;
+    color: var(--texto-secundario);
+  }
+  .search-input:focus {
+    border-color: #0066cc;
+  }
+
+  .search-icon {
+    position: absolute;
+    top: 35%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: var(--texto-secundario);
+    pointer-events: none;
+  }
+  .btn-pesquisa {
+    position: absolute;
+    border-radius: 3px;
+    padding: 3px 10px !important;
+    font-size: 0.5rem !important;
+    background-color: var(--btn-cta-primary);
+    color: var(--texto-primario);
+    cursor: pointer;
+    border: 1px solid transparent;
+    top: 38%;
+    transform: translateY(-50%);
+    right: 2px;
+  }
+
+  .explorar-cursos,
+  .como-funciona {
+    display: inline-flex;
+    padding: 2px 10px;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 0.7rem;
+    margin-left: 25px;
+    margin-bottom: 20px;
+  }
+  .material-symbols-outlined {
+    font-size: 0.6rem !important;
+  }
+
+  .imagem-tecnologia {
+    display: none;
+  }
+  .imagem-tecnologia img {
+    width: 90%;
+  }
+
+  .cursos-destaques-wrapper {
+    height: 250px;
+  }
+  .cursos-destaques-momento {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    flex-shrink: 0;
+    gap: 10px;
+    padding: 10px 0px;
+    width: 300px;
+    height: 250px;
+  }
+  .imagem-curso {
+    width: 190px !important;
+    height: 80px !important;
+  }
+  .curso-texto {
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  #destaques {
+    margin: 0 auto;
+
+    width: 375px;
+  }
+  .cursos-destaques {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    position: relative;
+  }
+  .cursos-destaques h2 {
+    font-size: 0.8rem !important;
+  }
+  .todos-cursos {
+    font-size: 0.6rem !important;
+  }
+  .cursos-mais-procurados {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    width: 200px;
+    margin-right: 5px;
+    margin-bottom: 5px !important;
+    max-height: 380px;
+  }
+  .cursos-mais-procurados p {
+    font-size: 0.6rem;
+  }
+  .seta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    font-size: 0.7rem;
+  }
+
+  .btn-matricula {
+    padding: 2px;
+    font-size: 0.5rem;
+  }
+
+  .info-cursos {
+    font-size: 0.5rem;
+  }
+  .medias-da-escola {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+  }
+
+  .medias-da-escola h3 {
+    font-size: 0.8rem !important;
+  }
+
+  .alunos-matriculados {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 100px;
+    height: 60px;
+    margin-right: 5px;
+    text-align: center;
+  }
+  .icone-alunos {
+    width: 25px;
+  }
+
+  .icone-alunos span {
+    font-size: 1.5rem !important;
+  }
+
+  .info-alunos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-alunos p {
+    font-size: 0.5rem !important;
+  }
+
+  .cursos-disponiveis {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 100px;
+    height: 60px;
+    margin-right: 5px;
+    text-align: center;
+  }
+
+  .icone-cursos span {
+    font-size: 1rem !important;
+  }
+  .info-cursos {
+    display: flex;
+    flex-direction: column;
+  }
+  .info-cursos p {
+    font-size: 0.5rem !important;
+  }
+  .icone-cursos {
+    width: 25px;
+  }
+  .certificados {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 100px;
+    height: 60px;
+    margin-right: 5px;
+    text-align: center;
+  }
+
+  .icone-certificados span {
+    font-size: 1rem !important;
+  }
+  .info-certificados {
+    display: flex;
+    flex-direction: column;
+  }
+  .info-certificados p {
+    font-size: 0.5rem !important;
+  }
+  .icone-certificados {
+    width: 25px;
+  }
+  .avaliacao {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 100px;
+    height: 60px;
+    margin-right: 5px;
+    text-align: center;
+  }
+
+  .icone-avaliacao span {
+    font-size: 1rem !important;
+  }
+  .info-avaliacao {
+    display: flex;
+    flex-direction: column;
+  }
+  .info-avaliacao p {
+    font-size: 0.5rem !important;
+  }
+  .icone-avaliacao {
+    width: 25px;
+  }
+
+  footer {
+    overflow: hidden;
+    display: flex;
+    width: 375px;
+    height: 140px !important;
+    z-index: 1;
+    position: relative;
+  }
+  #footer {
+    display: flex;
+    height: 140px;
+  }
+  .redes-sociais {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 140px;
+    text-decoration: none;
+    padding: 5px;
+    /* font-size: 0.6rem !important; */
+  }
+
+  .redes-sociais h3 {
+    font-size: 0.5rem;
+  }
+  .logo-titulo img {
+    margin-left: 0px;
+    width: 15px !important;
+    height: 20px !important;
+  }
+  .redes-sociais p {
+    font-size: 0.4rem !important;
+  }
+  .redes-sociais-links {
+    display: flex;
+    width: 100px;
+  }
+  .icones-link {
+    margin-right: 0.5px;
+  }
+  .lista-links img {
+    width: 15px !important;
+    height: 15px !important;
+  }
+
+  .navegacao-footer {
+    width: 100px;
+    margin: 0 !important;
+    padding: 5px 20px 0 0;
+    /* font-size: 0.rem !important; */
+  }
+
+  .links-navegacao {
+    font-size: 0.4rem !important;
+  }
+  .nav-footer {
+    margin: 0px !important;
+  }
+  .navegacao-footer h4 {
+    font-size: 0.5rem !important;
+  }
+  .suporte {
+    width: 100px;
+    margin: 0 !important;
+    padding: 5px 20px 0 0;
+  }
+  .suporte-links-a {
+    font-size: 0.4rem !important;
+  }
+  .suporte-links {
+    margin: 0px !important;
+  }
+  .suporte h4 {
+    font-size: 0.5rem !important;
+  }
+  .contato {
+    width: 100px;
+    margin: 0 !important;
+    padding: 5px 20px 0 0;
+  }
+  .contato h4 {
+    font-size: 0.5rem !important;
+  }
+  .links-contato {
+    font-size: 0.4rem !important;
+  }
+  .contato-links {
+    margin-top: 5px !important;
+  }
+  .mensagem-de-erro {
+    display: flex;
+    color: var(--texto-secundario);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    margin-left: 5%;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 800px) {
+  #footer {
+    display: flex;
+    height: 180px;
+    overflow: hidden;
+    width: 100%;
+  }
+  .mensagem-de-erro {
+    display: flex;
+    color: var(--texto-secundario);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    margin-left: 20%;
+  }
+
+  footer {
+    overflow: hidden;
+    display: flex;
+    width: px;
+    height: 140px !important;
+    z-index: 1;
+    position: relative;
+  }
+
+  .nome-escola {
+    padding: 0px;
+  }
+  .nav-paginas {
+    font-size: 0.6rem;
+    padding: 2px !important;
+    cursor: pointer !important;
+    
+  }
+  .navegacao {
+    padding: 0px;
+    cursor: pointer !important;
+  }
+  .lista-paginas {
+    margin-left: 0;
+    
+  }
+  .nav-paginas:hover {
+    color: var(--link-hover);
+    border-bottom: 2px solid var(--link-hover);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .container-section {
+    width: 700px !important;
+    margin: 0 auto !important;
+    padding: 0 10px !important;
+  }
+  #apresentacao {
+    font-size: 0.6rem;
+    width: 680px;
+    height: 350px;
+  }
+
+  #apresentacao::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    height: 100%;
+
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.575), rgba(0, 0, 0, 0.493)),
+      url("/images/background-image-computer.png");
+    background-size: cover;
+    background-position: center;
+
+    -webkit-mask-image:
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+      );
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+      );
+    mask-composite: intersect;
+  }
+  .apresentacao-site {
+    width: 100%;
+    margin-top: 40px;
+    height: 310px;
+    z-index: 1;
+    position: relative;
+  }
+  .apresentacao-site p {
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+  .explorar-cursos,
+  .como-funciona {
+    margin-left: 90px;
+  }
+  .imagem-tecnologia {
+    display: none;
+  }
+  .cursos-destaques {
+    z-index: 1;
+    position: relative;
+  }
+  .cursos-destaques-wrapper {
+    width: 680px;
+  }
+  .cursos-destaques-momento {
+    width: 600px;
+  }
+  .medias-da-escola {
+    position: relative;
+  }
+  .alunos-matriculados h3,
+  .cursos-disponiveis h3,
+  .certificados h3,
+  .avaliacao h3 {
+    font-size: 1.2rem !important;
+  }
+  .alunos-matriculados span,
+  .cursos-disponiveis span,
+  .certificados span,
+  .avaliacao span {
+    font-size: 2rem !important;
+  }
+  .alunos-matriculados p,
+  .cursos-disponiveis p,
+  .certificados p,
+  .avaliacao p {
+    font-size: 0.5rem;
+  }
+
+  #footer {
+    z-index: 1;
+    position: relative;
+  }
+  .navegacao-footer,
+  .suporte,
+  .contato {
+    margin-left: 0px;
+    width: 160px;
+  }
+}
+@media screen and (min-width: 1026px) {
+  .container-section {
+    width: 950px;
+  }
+  .cursos-destaques-momento {
+    width: 850px;
+  }
+
+  .navegacao-footer,
+  .contato,
+  .suporte {
+    margin-left: 20px;
+  }
+  .mensagem-de-erro {
+    display: flex;
+    color: var(--texto-secundario);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    margin-left: 20%;
+  }
 }

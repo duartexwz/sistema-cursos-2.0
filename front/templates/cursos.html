@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecno Brasilia Cursos</title>
+    <link rel="stylesheet" href="/assets/cursos.css">
+</head>
+
+<body>
+    <section id="topo">
+        <div class="container-section">
+            <header>
+                <section id="menu-navegacao">
+                    <div class="nome-escola">
+                        <img src="/images/cerebro.png" alt="">
+                        <h2> Tecno Brasília</h2>
+                    </div>
+                    <nav class="navegacao">
+                        <ul>
+                            <li class="lista-paginas"><a href="home.html" class="nav-paginas">Ínicio</a></li>
+                            <li class="lista-paginas"><a href="cursos.html" class="nav-paginas">Cursos</a></li>
+                            <li class="lista-paginas"><a href="sobre.html" class="nav-paginas">Sobre</a></li>
+                            <li class="lista-paginas"><a href="matricula.html" class="nav-paginas">Matrícula</a></li>
+                            <li class="lista-paginas"><a href="area-aluno.html" class="nav-paginas">Área do Aluno</a>
+                            </li>
+                            <li class="lista-paginas"><a href="duvidas-contato.html"
+                                    class="nav-paginas">Dúvidas/Contato</a></li>
+                        </ul>
+                    </nav>
+                    <button class="btn-menu" id="btn-menu" arial-label="Abrir menu">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <div class="overlay" id="overlay"></div>
+                    <nav class="navegacao-lateral" id="navegacao-lateral">
+
+                        <ul>
+                            <li class="lista-paginas-lateral"><a href="home.html" class="nav-paginas-lateral">Ínicio</a>
+                            </li>
+                            <li class="lista-paginas-lateral"><a href="cursos.html"
+                                    class="nav-paginas-lateral">Cursos</a></li>
+                            <li class="lista-paginas-lateral"><a href="sobre.html" class="nav-paginas-lateral">Sobre</a>
+                            </li>
+                            <li class="lista-paginas-lateral"><a href="matricula.html"
+                                    class="nav-paginas-lateral">Matrícula</a></li>
+                            <li class="lista-paginas-lateral"><a href="area-aluno.html" class="nav-paginas-lateral">Área
+                                    do Aluno</a>
+                            </li>
+                            <li class="lista-paginas-lateral"><a href="duvidas-contato.html"
+                                    class="nav-paginas-lateral">Dúvidas/Contato</a></li>
+                        </ul>
+                    </nav>
+
+                </section>
+            </header>
+            <section class="pesquisa-cursos">
+                <div class="titulo">
+                    <h2>Todos os Cursos</h2>
+                </div>
+                <div class="pesquisa">
+                    <form action="/pesquisa" method="GET" class="search-container">
+
+                        <svg class="search-icon" xmlns="http://w3.org" viewBox="0 0 24 24" width="18" height="18"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+
+                        <input type="search" name="q" class="search-input" placeholder="O que você deseja aprender?"
+                            required>
+                        <button type="submit" id="btn-pesquisar" class="btn-pesquisa">Buscar</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </section>
+    <section id="filtros">
+        <div class="filtros-cursos">
+
+        </div>
+    </section>
+    <section id="cursos">
+
+    </section>
+    <section id="navegacao-lateral-cursos">
+
+    </section>
+</body>
+
+</html>

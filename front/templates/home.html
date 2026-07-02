@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <section id="topo">
 
         <div class="container-section">
@@ -32,6 +33,29 @@
                                     class="nav-paginas">Dúvidas/Contato</a></li>
                         </ul>
                     </nav>
+                    <button class="btn-menu" id="btn-menu" arial-label="Abrir menu">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <div class="overlay" id="overlay"></div>
+                    <nav class="navegacao-lateral" id="navegacao-lateral">
+
+                        <ul>
+                            <li class="lista-paginas-lateral"><a href="home.html" class="nav-paginas-lateral">Ínicio</a>
+                            </li>
+                            <li class="lista-paginas-lateral"><a href="cursos.html"
+                                    class="nav-paginas-lateral">Cursos</a></li>
+                            <li class="lista-paginas-lateral"><a href="sobre.html" class="nav-paginas-lateral">Sobre</a>
+                            </li>
+                            <li class="lista-paginas-lateral"><a href="matricula.html"
+                                    class="nav-paginas-lateral">Matrícula</a></li>
+                            <li class="lista-paginas-lateral"><a href="area-aluno.html" class="nav-paginas-lateral">Área
+                                    do Aluno</a>
+                            </li>
+                            <li class="lista-paginas-lateral"><a href="duvidas-contato.html"
+                                    class="nav-paginas-lateral">Dúvidas/Contato</a></li>
+                        </ul>
+                    </nav>
+
                 </section>
 
             </header>
@@ -72,7 +96,7 @@
                     </div>
 
                     <div class="imagem-tecnologia">
-                        <img src="/images/Captura de tela 2026-06-25 122157.png" alt="" class="imagem">
+                        <img src="/images/background-image-computer.png" alt="" class="imagem">
                     </div>
                 </div>
             </section>
@@ -90,6 +114,7 @@
                 <div class="cursos-destaques-momento" id="cursos-destaque"></div>
                 <button class="seta seta direita" id="seta-direita">&#8250;</button>
             </div>
+            
             <div class="medias-da-escola">
                 <div class="alunos-matriculados">
                     <div class="icone-alunos"><span class="material-symbols-outlined">
@@ -202,6 +227,7 @@
             </footer>
         </div>
     </section>
+
     <script src="/static/api.js"></script>
     CarregarCursos()
 </body>

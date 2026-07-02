@@ -1,13 +1,18 @@
 async function CarregarCursos() {
+  const container = document.getElementById("cursos-destaque");
   try {
     const resposta = await fetch("https://tecno-brasilia.fly.dev/cursos/");
     // console.log(response.status);
     const data = await resposta.json();
     console.log("Dados dos cursos:", data);
 
-    const container = document.getElementById("cursos-destaque");
     container.innerHTML = "";
     const cursos = data.cursos.slice(0, 8);
+
+    if (cursos.length === 0){
+      container.innerHTML = "<p>Nenhum curso disponível no momento.</p>";
+      return;
+    }
     cursos.forEach((curso) => {
       const card = document.createElement("div");
       card.classList.add("cursos-mais-procurados");
@@ -36,6 +41,7 @@ async function CarregarCursos() {
     });
   } catch (erro) {
     console.error("Erro ao carregar cursos:", erro);
+    container.innerHTML = "<p class='mensagem-de-erro'>Erro ao carregar cursos. Por favor, tente novamente mais tarde.</p>";
   }
 }
 
@@ -59,6 +65,29 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.addEventListener("DOMContentLoaded", (event) => {
+  const btnMenu = document.getElementById("btn-menu");
+  const navegacao = document.getElementById("navegacao-lateral");
+  const overlay = document.getElementById("overlay");
 
+  function toggleMenu() {
+    navegacao.classList.toggle("ativo");
+    overlay.classList.toggle("ativo");
+    
+    if (navegacao.classList.contains("ativo")){
+      document.body.style.overflow ="hidden";
+    } else{
+      document.body.style.overflow = "";
+    }
+  }
+ 
+  btnMenu.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", toggleMenu);
 
-// CarregarCursos();
+  document.querySelectorAll("nav-paginas-lateral").forEach((link) => {
+    link.addEventListener("click", toggleMenu);
+  });    
+
+  
+});
+
