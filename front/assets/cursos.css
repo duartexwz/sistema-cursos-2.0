@@ -49,7 +49,8 @@ body {
 
 .nav-paginas-lateral,
 .btn-menu,
-.btn-fechar, .navegacao-lateral {
+.btn-fechar,
+.navegacao-lateral {
   display: none;
 }
 
@@ -115,43 +116,77 @@ body {
   color: var(--link-hover);
 }
 
-.filtros-cursos{
-    display: flex;
-    border: 1px solid red;
-    width: 100%;
-    ;
+.filtros-cursos {
+  display: flex;
+  /* border: 1px solid red; */
+  width: 100%;
 }
+#pesquisa-cursos {
+  width: 100%;
+}
+
+.pesquisa-cursos {
+  border: 1px solid red;
+}
+
+.pesquisa-cursos h2 {
+  color: var(--texto-primario);
+  max-width: 200px;
+}
+.pesquisa {
+  display: flex;
+}
+
 .search-container {
   position: relative;
   justify-content: space-between;
-  width: 100%;
-  max-width: 700px;
+  width: 60%;
+  max-width: 500px;
   display: flex;
   align-items: center;
+  margin-left: auto;
 }
 
 .search-icon {
   position: absolute;
   top: 35%;
-  left: 14px;
+  left: auto;
+  right: 14px;
   transform: translateY(-50%);
   color: #777;
   pointer-events: none;
 }
 
 .search-input {
-  width: 100%;
-  padding: 5px 10px 10px 35px;
+  margin-top: 10px;
+  width: 45%;
+  padding: 5px;
   font-size: 0.9rem;
   border: 1px solid var(--text-disabled);
-  border-radius: 8px;
+  border-radius: 6px;
   outline: none;
   box-sizing: border-box;
   margin-bottom: 10px;
   background: transparent;
   color: var(--texto-primario) !important;
+  margin-right: 15px;
 }
 
 .search-input:focus {
   border-color: #0066cc;
+}
+
+.ordenar {
+  width: 300px;
+  float: right;
+}
+
+.ordenar-pesquisa {
+  background-color: transparent;
+  color: var(--texto-primario);
+  font-size: 0.8rem;
+  font-weight: 400;
+  border-radius: 6px;
+  width: 45%;
+  padding: 5px;
 }
