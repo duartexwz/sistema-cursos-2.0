@@ -1,5 +1,6 @@
 async function CarregarCursos() {
   const container = document.getElementById("cursos-destaque");
+
   try {
     const resposta = await fetch("https://tecno-brasilia.fly.dev/cursos/");
     // console.log(response.status);
@@ -9,7 +10,7 @@ async function CarregarCursos() {
     container.innerHTML = "";
     const cursos = data.cursos.slice(0, 8);
 
-    if (cursos.length === 0){
+    if (cursos.length === 0) {
       container.innerHTML = "<p>Nenhum curso disponível no momento.</p>";
       return;
     }
@@ -26,7 +27,7 @@ async function CarregarCursos() {
                     <p>${curso.descricao}</p>
                 </div>
                 <ul class="curso-info">
-                    <li class="info-cursos">${curso.carga_horaria} horas</li>
+                    <li class="info-cursos"><span class="material-symbols-outlined">schedule</span>${curso.carga_horaria} horas</li>
                     <li class="info-cursos">${curso.nivel}</li>
                     <li class="info-cursos">${curso.categoria}</li>
                 </ul>
@@ -41,7 +42,8 @@ async function CarregarCursos() {
     });
   } catch (erro) {
     console.error("Erro ao carregar cursos:", erro);
-    container.innerHTML = "<p class='mensagem-de-erro'>Erro ao carregar cursos. Por favor, tente novamente mais tarde.</p>";
+    container.innerHTML =
+      "<p class='mensagem-de-erro'>Erro ao carregar cursos. Por favor, tente novamente mais tarde.</p>";
   }
 }
 
@@ -73,21 +75,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
   function toggleMenu() {
     navegacao.classList.toggle("ativo");
     overlay.classList.toggle("ativo");
-    
-    if (navegacao.classList.contains("ativo")){
-      document.body.style.overflow ="hidden";
-    } else{
+
+    if (navegacao.classList.contains("ativo")) {
+      document.body.style.overflow = "hidden";
+    } else {
       document.body.style.overflow = "";
     }
   }
- 
+
   btnMenu.addEventListener("click", toggleMenu);
   overlay.addEventListener("click", toggleMenu);
 
   document.querySelectorAll("nav-paginas-lateral").forEach((link) => {
     link.addEventListener("click", toggleMenu);
-  });    
-
-  
+  });
 });
-

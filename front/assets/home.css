@@ -83,6 +83,9 @@ body {
   width: 300px;
   align-items: center;
 }
+.color {
+  color: var(--btn-cta-primary);
+}
 
 .nome-escola h2 {
   margin-left: 60px;
@@ -115,7 +118,6 @@ body {
   border-bottom: 2px solid var(--link-hover);
   transition: all 0.3s ease-in-out;
 }
-
 
 #apresentacao {
   color: var(--texto-primario);
@@ -310,6 +312,7 @@ body {
   margin-top: 10px;
   min-height: 200px;
   margin-right: 10px;
+  overflow: hidden;
   background-color: var(--background-primario-1);
 }
 
@@ -332,74 +335,93 @@ body {
   z-index: 10;
   flex-shrink: 0;
 }
+.curso-texto h3 {
+  margin: 5px 2px 0 0;
+  color: var(--texto-primario);
+  font-size: 0.8rem;
+  padding: 5px;
+}
+
+.cursos-mais-procurados img {
+  width: 310px;
+  height: 110px;
+}
+
+.curso-imagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.curso-texto {
+  margin: 10px 10px 10px 10px;
+  color: var(--texto-secundario);
+  font-size: 0.8rem;
+}
+
+.curso-texto p {
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-weight: 350;
+  font-size: 0.6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: auto;
+  min-height: 0;
+  padding: 5px;
+}
+
+.curso-info {
+  display: flex;
+  color: var(--texto-secundario);
+  max-width: 150px;
+  flex-direction: column;
+  text-decoration: none;
+  list-style-type: none;
+  margin-bottom: 8px;
+  padding: 15px;
+}
+
+.curso-info span {
+  display: flex;
+  float: right;
+  margin-top: 1px;
+  font-size: 0.7rem;
+  margin-right: 2px;
+}
+
+.curso-info li {
+  display: flex;
+  margin-right: 35px;
+  font-size: 0.6rem;
+  font-weight: 350;
+}
+
+.curso-acao {
+  display: flex;
+  justify-content: space-between;
+  color: var(--texto-primario);
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
 
 .btn-matricula {
-  padding: 5px;
-  background-color: var(--btn-cta-primary);
-  color: var(--texto-primario);
-  border-radius: 8px;
-  outline: noone;
-  border: none;
-  cursor: pointer;
   border: 1px solid transparent;
-  font-weight: 400;
+  color: var(--texto-primario);
+  background-color: var(--btn-cta-primary);
+  border-radius: 5px;
+  padding: 2px 5px;
+  cursor: pointer;
 }
 
 .btn-matricula:hover {
   border: 1px solid var(--btn-cta-primary);
   background-color: transparent;
   color: var(--btn-cta-primary);
-  transition: 0.3s all ease-in-out;
-}
-
-.curso-info {
-  display: flex;
-  margin-top: 10px;
-  padding: 0 15px;
-  font-size: 0.7rem;
-  color: var(--texto-secundario);
-  list-style: none;
-  text-align: left;
-}
-
-.curso-info li {
-  margin-top: 15px;
-  display: flex;
-  width: 100%;
-  box-sizing: border-box;
-  flex-direction: column;
-}
-
-.curso-acao {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-between;
-  margin-right: 10px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-}
-
-.curso-texto {
-  text-align: left;
-  padding: 0 15px;
-}
-
-.cursos-mais-procurados p {
-  color: var(--texto-secundario);
-  font-weight: 400;
-  font-size: 0.7rem;
-}
-
-.cursos-mais-procurados img {
-  width: 100%;
-  overflow: hidden;
-  height: 150px;
-  margin-top: 8px;
-  padding: 0 10px;
-}
-
-.imagem-curso {
-  height: 150px;
+  transition: 0.3s ease-in-out;
 }
 
 .medias-da-escola {
@@ -470,13 +492,6 @@ body {
   width: 25px;
   font-size: 45px;
   margin-right: 25px;
-}
-
-.info-cursos {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .info-cursos h3 {
@@ -803,6 +818,7 @@ ul {
   .contato {
     margin-left: 0px;
   }
+  
 }
 
 @media screen and (max-width: 600px) {
@@ -1072,15 +1088,18 @@ ul {
     height: 250px;
   }
   .imagem-curso {
-    width: 190px !important;
+    width: 100% !important;
     height: 80px !important;
   }
-  .curso-texto {
-    line-clamp: 1;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  .imagem-curso img {
+    width: 100% !important;
+  }
+ 
+  .container-imagem{
+    margin-bottom: 0;
+  }
+  .curso-texto{
+    margin: 0 0 10px 0;
   }
 
   #destaques {
@@ -1108,11 +1127,21 @@ ul {
     width: 200px;
     margin-right: 5px;
     margin-bottom: 5px !important;
-    max-height: 380px;
+    max-height: 390px;
   }
-  .cursos-mais-procurados p {
-    font-size: 0.6rem;
+  .curso-texto p {
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-weight: 350;
+    font-size: 0.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: auto;
+    min-height: 0;
   }
+
   .seta {
     display: flex;
     justify-content: center;
@@ -1121,6 +1150,11 @@ ul {
     height: 25px;
     font-size: 0.7rem;
   }
+  .curso-texto h3 {
+    color: var(--texto-primario);
+    font-size: 0.5rem;
+    margin-top: 0 !important;
+  }
 
   .btn-matricula {
     padding: 2px;
@@ -1128,7 +1162,23 @@ ul {
   }
 
   .info-cursos {
-    font-size: 0.5rem;
+    font-size: 0.5rem !important;
+  }
+
+  .curso-info{
+    padding: 0 0 0 10px;
+    display: flex;
+    
+  }
+
+  .info-cursos span {
+    width: 5px;
+    font-size: 0.4rem !important;
+    float: left;
+    
+  }
+  .curso-info li{
+    display: inline-block;
   }
   .medias-da-escola {
     display: flex;
@@ -1378,11 +1428,11 @@ ul {
   .nome-escola {
     padding: 0px;
   }
+
   .nav-paginas {
     font-size: 0.6rem;
     padding: 2px !important;
     cursor: pointer !important;
-    
   }
   .navegacao {
     padding: 0px;
@@ -1390,7 +1440,6 @@ ul {
   }
   .lista-paginas {
     margin-left: 0;
-    
   }
   .nav-paginas:hover {
     color: var(--link-hover);

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecno Brasilia Cursos</title>
     <link rel="stylesheet" href="/assets/cursos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
 </head>
 
 <body>
@@ -15,7 +17,7 @@
                 <section id="menu-navegacao">
                     <div class="nome-escola">
                         <img src="/images/cerebro.png" alt="">
-                        <h2> Tecno Brasília</h2>
+                        <h2> Tecno <span class="color">Brasília</span></h2>
                     </div>
                     <nav class="navegacao">
                         <ul>
@@ -57,31 +59,89 @@
             <section class="pesquisa-cursos">
                 <div class="pesquisa">
                     <div class="titulo">
-                    <h2>Todos os Cursos</h2>
+                        <h2>Todos os Cursos</h2>
+                        <p class="paginacao-texto">Mostrando <span id="qtd-mostrando">6</span> de <span
+                                class="color"><span id="qtd-total">248</span> cursos </span>disponíveis</p>
                     </div>
                     <form action="/pesquisa" method="GET" class="search-container">
                         <input type="search" name="q" class="search-input" placeholder="Buscar cursos.." required>
-                        <select name="ordenarPort" id="ordenarPor" class="ordenar-pesquisa">
-                            <option value="relevancia">Relevância</option>
-                            <option value="preco">Preço</option>
-                        </select>
+                        <div class="custom-select" id="custom-select">
+                            <div class="select-trigger" id="trigger">
+                                <span class="label">Ordenar por</span>
+                                <span class="value" id="selectedValue">
+                                    Mais Populares
+                                </span>
+                                <svg class="chevron" viewbox="0 0 24 24" fill="none" stroke="#9aa0ab" stroke-width="2"
+                                    stroke-linecamp="round" stroke-linejoin="round">
+                                    <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                            </div>
+                            <div class="options" id="options">
+                                <div class="option selected" data-value="Mais Populares">Mais Populares</div>
+                                <div class="option" data-value="Mais Recentes">Mais Recentes</div>
+                                <div class="option" data-value="Menor preço">Menor Preço</div>
+                                <div class="option" data-value="Maior Preço">Maior Preço</div>
+                                <div class="option" data-value="Mais Procurados">Mais Procurados</div>
+                            </div>
+                        </div>
                     </form>
-                    
+
                 </div>
             </section>
         </div>
     </section>
-    <section id="filtros">
-        <div class="filtros-cursos">
+    <section id="cursos-section">
+        <div class="container-section">
 
+            <div class="cursos-superior" id="cursos-superior">
+
+
+            </div>
+            <div class="cursos-inferior" id="cursos-inferior">
+
+
+            </div>
         </div>
     </section>
-    <section id="cursos">
-
-    </section>
     <section id="navegacao-lateral-cursos">
-
+        <div class="container-section">
+            <div class="nav-lateral">
+                <div class="paginacao">
+                    <button>&laquo;</button>
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>&raquo;</button>
+                </div>
+            </div>
+        </div>
     </section>
+    <script>
+        const select = document.getElementById("custom-select");
+        const trigger = document.getElementById("trigger");
+        const selectedValue = document.getElementById("selectedValue");
+        const options = document.querySelectorAll(".option");
+
+        trigger.addEventListener("click", () => {
+            select.classList.toggle("open");
+        });
+
+        options.forEach(option => {
+            option.addEventListener("click", () => {
+                options.forEach(o => o.classList.remove("selected"));
+                option.classList.add("selected");
+                selectedValue.textContent = option.dataset.value;
+                select.classList.remove("open");
+            });
+        });
+        document.addEventListener("click", (e) => {
+            if (!select.contains(e.target)) {
+                select.classList.remove("open");
+            }
+        });
+    </script>
+    <script src="/static/cursos.js"></script>
 </body>
 
 </html>

@@ -44,7 +44,7 @@
 
 body {
   background-color: var(--background-primario);
-  height: 100%;
+  overflow: hidden;
 }
 
 .nav-paginas-lateral,
@@ -57,7 +57,7 @@ body {
 .container-section {
   width: 1280px;
   margin: 0 auto;
-
+  border: 1px solid green;
   padding: 0 10px;
 }
 
@@ -76,7 +76,8 @@ body {
   align-items: center;
   color: var(--texto-primario);
   border-bottom: 1px solid var(--line-section);
-  margin-bottom: 35px;
+  margin-bottom: 15px;
+  border: 1px solid red;
 }
 
 .nome-escola {
@@ -99,12 +100,14 @@ body {
   display: flex;
   padding: 20px;
   font-size: 0.8rem;
+  border: 1px solid red;
 }
 
 .nav-paginas {
   color: var(--texto-primario);
   padding: 10px;
   text-decoration: none;
+  border: 1px solid red;
 }
 
 .lista-paginas {
@@ -116,17 +119,13 @@ body {
   color: var(--link-hover);
 }
 
-.filtros-cursos {
-  display: flex;
-  /* border: 1px solid red; */
-  width: 100%;
-}
 #pesquisa-cursos {
   width: 100%;
 }
 
 .pesquisa-cursos {
   border: 1px solid red;
+  margin-bottom: 15px;
 }
 
 .pesquisa-cursos h2 {
@@ -147,19 +146,10 @@ body {
   margin-left: auto;
 }
 
-.search-icon {
-  position: absolute;
-  top: 35%;
-  left: auto;
-  right: 14px;
-  transform: translateY(-50%);
-  color: #777;
-  pointer-events: none;
-}
 
 .search-input {
   margin-top: 10px;
-  width: 45%;
+  width: 55%;
   padding: 5px;
   font-size: 0.9rem;
   border: 1px solid var(--text-disabled);
@@ -176,17 +166,274 @@ body {
   border-color: #0066cc;
 }
 
-.ordenar {
-  width: 300px;
-  float: right;
+.search-input:active{
+  background-color: transparent;
 }
 
-.ordenar-pesquisa {
+.search-input::selection{
   background-color: transparent;
+}
+.custom-select {
+  position: relative;
+  width: 260px;
+  user-select: none;
+}
+
+.select-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--background-primario);
+  border: 1px solid var(--text-disabled);
+  border-radius: 5px;
+  padding: 7px;
+  cursor: pointer;
+  color: var(--texto-secundario);
+  font-size: 0.8rem;
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease;
+}
+.select-trigger:hover {
+  border-color: var(--btn-cta-hover);
+}
+.select-trigger .label {
+  color: var(--text-disabled);
+}
+color
+.select-trigger .value {
+  color: var(--texto-secundario);
+  font-weight: 500;
+  flex: 1;
+}
+
+.select-trigger .chevron {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+.custom-select.open .chevron {
+  transform: rotate(180deg);
+}
+
+.options {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: var(--background-primario-1);
+  border: 1px solid var(--text-disabled);
+  border-radius: 5px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+  z-index: 10;
+}
+
+.custom-select.open .options {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.option {
+  padding: 10px 16px;
+  color: var(--texto-secundario);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: var(--background-secundario);
+  color: var(--link-hover);
+}
+
+.option.selected {
+  color: var(--link-active);
+  font-weight: 500;
+}
+.paginacao-texto {
+  color: var(--texto-secundario);
+  font-size: 0.65rem;
+  font-weight: 500;
+}
+
+.color {
+  color: var(--btn-cta-primary);
+}
+
+.cursos {
+  margin-top: 15px;
+  height: 650px;
+  border: 1px solid red;
+}
+
+#navegacao-lateral-cursos {
+  width: 100%;
+  height: 150px;
+}
+
+.nav-lateral {
+  border: 1px solid red;
+  height: 55px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.numeracao-paginas {
+  border: 1px solid red;
+  width: 400px;
+  height: 45px;
+}
+
+.cursos-superior {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px 10px 10px;
+  overflow: hidden;
+  max-width: 1270px;
+  border: 1px solid red;
+
+}
+
+.cursos-mais-procurados {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid var(--text-disabled);
+  width: 290px;
+  margin-top: auto;
+  min-height: 200px;
+  margin-right: 10px;
+  max-height: 310;
+  background-color: var(--background-primario-1);
+  overflow: hidden;
+}
+
+.curso-texto h3 {
+  margin: 5px 2px 0 0;
   color: var(--texto-primario);
   font-size: 0.8rem;
-  font-weight: 400;
-  border-radius: 6px;
-  width: 45%;
-  padding: 5px;
+}
+
+.cursos-mais-procurados img {
+  width: 290px;
+  height: 110px;
+}
+
+.curso-imagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.curso-texto {
+  margin: 10px 10px 10px 10px;
+  color: var(--texto-secundario);
+  font-size: 0.8rem;
+}
+
+.curso-texto p {
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  font-weight: 350;
+  font-size: 0.6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: auto;
+  min-height: 0;
+}
+
+.curso-info {
+  display: flex;
+  color: var(--texto-secundario);
+  max-width: 280px;
+  flex-direction: column;
+  text-decoration: none;
+  list-style-type: none;
+  margin-bottom: 8px;
+  padding: 10px 10px 10px 10px;
+}
+
+.curso-info span {
+  display: flex;
+  float: left;
+  margin-top: 1px;
+  font-size: 0.7rem;
+  margin-right: 2px;
+}
+
+.curso-info li {
+  margin-right: 35px;
+  font-size: 0.6rem;
+  font-weight: 350;
+}
+
+.curso-acao {
+  display: flex;
+  justify-content: space-between;
+  color: var(--texto-primario);
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+
+}
+
+.btn-matricula {
+  border: 1px solid transparent;
+  color: var(--texto-primario);
+  background-color: var(--btn-cta-primary);
+  border-radius: 5px;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+
+.btn-matricula:hover{
+  border: 1px solid var(--btn-cta-primary);
+  background-color: transparent;
+  color: var(--btn-cta-primary);
+  transition: 0.2s ease-in-out;
+}
+
+.cursos-inferior {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px 10px 10px;
+  overflow: hidden;
+  max-width: 1270px;
+  border: 1px solid red;
+}
+
+.paginacao button{
+  background-color: transparent;
+  border: 1px solid var(--text-disabled);
+  border-radius: 5px;
+  color: var(--texto-secundario);
+  padding:  7px 15px ;
+  font-size: 0.8rem;
+  cursor: pointer;
+
+}
+
+.paginacao button:hover{
+  border: 1px solid var(--btn-cta-hover);
+  color: var(--btn-cta-hover);
+}
+
+.paginacao button:active{
+  background-color: var(--btn-primario-);
+  color: var(--texto-primario);
 }
