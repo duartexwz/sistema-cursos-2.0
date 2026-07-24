@@ -32,13 +32,17 @@ async function CarregarCursos() {
                     <li class="info-cursos">${curso.categoria}</li>
                 </ul>
                  <div class="curso-acao">
-                    <button class="btn-matricula" data-id="${curso.id}">Matricular-se</button>
+                    <a href="matricula.html" class="redirecionar-matricula">
+                      <button class="btn-matricula" data-id="${curso.id}">Matricular-se</button>
+                    </a>
                     <span class="curso-preco">R$${curso.preco}</span>
                 </div>
             `;
 
       container.appendChild(card);
-      console.log(cursos);
+      card.querySelector(".btn-matricula").addEventListener("click", () => {
+    localStorage.setItem("cursoSelecionado", JSON.stringify(curso));
+  });
     });
   } catch (erro) {
     console.error("Erro ao carregar cursos:", erro);
@@ -46,7 +50,6 @@ async function CarregarCursos() {
       "<p class='mensagem-de-erro'>Erro ao carregar cursos. Por favor, tente novamente mais tarde.</p>";
   }
 }
-
 // CarregarCursos();
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -89,4 +92,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   document.querySelectorAll("nav-paginas-lateral").forEach((link) => {
     link.addEventListener("click", toggleMenu);
   });
+  
 });
+
+CarregarCursos();

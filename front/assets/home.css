@@ -107,6 +107,11 @@ body {
   padding: 10px;
   text-decoration: none;
 }
+.nav-paginas.ativado{
+  border-bottom: 2px solid var(--link-hover);
+  color: var(--link-hover);
+}
+
 
 .lista-paginas {
   display: inline-block;

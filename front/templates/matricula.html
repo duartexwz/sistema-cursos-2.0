@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/matricula.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Matrícula</title>
+</head>
+
+<body>
+    <section id="topo">
+        <div class="container-section">
+            <header>
+                <section id="menu-navegacao">
+                    <div class="nome-escola">
+                        <img src="/images/cerebro.png" alt="">
+                        <h2> Tecno <span class="color">Brasília</span></h2>
+                    </div>
+                    <nav class="navegacao">
+                        <ul>
+                            <li class="lista-paginas"><a href="home.html" class="nav-paginas">Ínicio</a></li>
+                            <li class="lista-paginas"><a href="cursos.html" class="nav-paginas">Cursos</a></li>
+                            <li class="lista-paginas"><a href="sobre.html" class="nav-paginas">Sobre</a></li>
+                            <li class="lista-paginas"><a href="matricula.html" class="nav-paginas ativado">Matrícula</a>
+                            </li>
+                            <li class="lista-paginas"><a href="area-aluno.html" class="nav-paginas">Área do Aluno</a>
+                            </li>
+                            <li class="lista-paginas"><a href="duvidas-contato.html"
+                                    class="nav-paginas">Dúvidas/Contato</a></li>
+                        </ul>
+                    </nav>
+                    <button class="btn-menu" id="btn-menu" arial-label="Abrir menu">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <div class="overlay" id="overlay"></div>
+                    <nav class="navegacao-lateral" id="navegacao-lateral">
+
+                        <ul>
+                            <li class="lista-paginas-lateral"><a href="home.html" class="nav-paginas-lateral">Ínicio</a>
+                            </li>
+                            <li class="lista-paginas-lateral"><a href="cursos.html"
+                                    class="nav-paginas-lateral">Cursos</a></li>
+                            <li class="lista-paginas-lateral"><a href="sobre.html" class="nav-paginas-lateral">Sobre</a>
+                            </li>
+                            <li class="lista-paginas-lateral"><a href="matricula.html"
+                                    class="nav-paginas-lateral">Matrícula</a></li>
+                            <li class="lista-paginas-lateral"><a href="area-aluno.html" class="nav-paginas-lateral">Área
+                                    do Aluno</a>
+                            </li>
+                            <li class="lista-paginas-lateral"><a href="duvidas-contato.html"
+                                    class="nav-paginas-lateral">Dúvidas/Contato</a></li>
+                        </ul>
+                    </nav>
+                </section>
+            </header>
+            <section id="topo-matricula">
+                <div class="titulo-matricula">
+                    <h1>Matrícula no Curso</h2>
+                        <p>Preencha seus dados e escolha a melhor forma de pagamento para garantir sua vaga</p>
+                </div>
+                <div class="sessao-matricula">
+                    <ul class="stepper">
+                        <li class="step ativo" data-step="1">
+                            <span class="step-numero">1</span>
+                            <span class="step-label">Dados Pessoais</span>
+                        </li>
+                        <li class="step " data-step="2">
+                            <span class="step-numero">2</span>
+                            <span class="step-label">Pagamento</span>
+                        </li>
+                        <li class="step " data-step="3">
+                            <span class="step-numero">3</span>
+                            <span class="step-label">Confirmação</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+    </section>
+    <section id="dados-compra">
+        <div class="container-section container-layout-compra">
+
+            <div class="coluna-esquerda">
+                <section id="dados-cliente">
+                    <div class="dados-cliente">
+                        <div class="titulo">
+                            <div class="subtitulo">
+                                <span class="subtitle">
+                                    <span class="material-symbols-outlined">person</span>
+                                </span>
+                            </div>
+                            <h4>Seus dados pessoais</h4>
+                        </div>
+                        <form action="/submit-handler" method="post" class="formulario">
+                            <div class="form-name" id="form-name">
+                                <label for="nome">Nome completo</label>
+                                <input type="text" name="nome" placeholder="Digite seu nome completo" id="nome"
+                                    required>
+                            </div>
+                            <div class="campo" id="email-email">
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" placeholder="exemplo@gmail.com" required>
+                            </div>
+                            <div class="form-cpf" id="form-cpf">
+                                <label for="cpf">CPF</label>
+                                <input type="number" id="cpf" name="cpf" placeholder="000.000.000-00" required>
+                            </div>
+                            <div class="form-tel" id="form-tel">
+                                <label for="telefone">Telefone</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(11)90000-0000" required>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <section id="comprar-curso">
+                    <div class="forma-pagamento">
+                        <div class="titulo">
+                            <div class="subtitulo">
+                                <span class="subtitle">
+                                    <span class="material-symbols-outlined">credit_card</span>
+                                </span>
+                            </div>
+                            <h4>Escolha a forma de pagamento</h4>
+                        </div>
+
+                        <div class="opcoes-pagamento">
+
+                            <!-- Cartão de Crédito (Removida a classe 'selecionada' fixa) -->
+                            <label class="opcao-pagamento" for="pay-cartao">
+                                <input type="radio" id="pay-cartao" name="forma_pagamento" value="cartao" checked>
+                                <div class="opcao-conteudo">
+                                    <div class="opcao-topo">
+                                        <div class="icone-box cartao">
+                                            <span class="material-symbols-outlined">credit_card</span>
+                                        </div>
+                                        <div class="opcao-info">
+                                            <span class="opcao-titulo">Cartão de crédito</span>
+                                            <span class="opcao-subtitulo destaque">Até 12x sem juros</span>
+                                        </div>
+                                        <div class="radio-custom"></div>
+                                    </div>
+                                    <div class="bandeiras-cartao">
+                                        <span class="bandeira visa">VISA</span>
+                                        <span class="bandeira mastercard"></span>
+                                        <span class="bandeira elo">elo</span>
+                                        <span class="bandeira reticencias">• • •</span>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- PIX (Com o ícone SVG Oficial do PIX) -->
+                            <label class="opcao-pagamento" for="pay-pix">
+                                <input type="radio" id="pay-pix" name="forma_pagamento" value="pix">
+                                <div class="opcao-conteudo">
+                                    <div class="opcao-topo">
+                                        <div class="icone-box pix">
+                                            <svg width="24" height="24" viewBox="0 0 512 512" fill="currentColor"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M112.5 109.9c-8.2 0-16.3 3.1-22.6 9.4l-72.1 72.1c-12.5 12.5-12.5 32.8 0 45.3l72.1 72.1c12.5 12.5 32.8 12.5 45.3 0l72.1-72.1c12.5-12.5 12.5-32.8 0-45.3l-72.1-72.1c-6.3-6.3-14.4-9.4-22.7-9.4zm287 0c-8.2 0-16.3 3.1-22.6 9.4l-72.1 72.1c-12.5 12.5-12.5 32.8 0 45.3l72.1 72.1c12.5 12.5 32.8 12.5 45.3 0l72.1-72.1c12.5-12.5 12.5-32.8 0-45.3l-72.1-72.1c-6.3-6.3-14.4-9.4-22.7-9.4zM256 226.4c-8.2 0-16.3 3.1-22.6 9.4l-72.1 72.1c-12.5 12.5-12.5 32.8 0 45.3l72.1 72.1c12.5 12.5 32.8 12.5 45.3 0l72.1-72.1c12.5-12.5 12.5-32.8 0-45.3c-6.3-6.3-14.4-9.5-22.7-9.5zm0-233c-8.2 0-16.3 3.1-22.6 9.4L161.3 75c-12.5 12.5-12.5 32.8 0 45.3l72.1 72.1c12.5 12.5 32.8 12.5 45.3 0l72.1-72.1c12.5-12.5 12.5-32.8 0-45.3L278.6 2.8c-6.3-6.3-14.4-9.4-22.6-9.4z" />
+                                            </svg>
+                                        </div>
+                                        <div class="opcao-info">
+                                            <span class="opcao-titulo">PIX</span>
+                                            <span class="opcao-subtitulo">Aprovação imediata</span>
+                                        </div>
+                                        <div class="radio-custom"></div>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- Boleto -->
+                            <label class="opcao-pagamento" for="pay-boleto">
+                                <input type="radio" id="pay-boleto" name="forma_pagamento" value="boleto">
+                                <div class="opcao-conteudo">
+                                    <div class="opcao-topo">
+                                        <div class="icone-box boleto">
+                                            <span class="material-symbols-outlined">barcode</span>
+                                        </div>
+                                        <div class="opcao-info">
+                                            <span class="opcao-titulo">Boleto bancário</span>
+                                            <span class="opcao-subtitulo">Vencimento em 3 dias úteis</span>
+                                        </div>
+                                        <div class="radio-custom"></div>
+                                    </div>
+                                </div>
+                            </label>
+
+                        </div>
+                        <button class="compra">
+                            <span class="material-symbols-outlined">lock</span>
+                            Finalizar matrícula
+                        </button>
+                    </div>
+                </section>
+            </div>
+
+            <div class="coluna-direita">
+                <div class="resumo-pedido">
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <script>
+        let etapaAtual = 1;
+
+        function proximaEtapa(novaEtapa) {
+            if (novaEtapa > etapaAtual && !etapaValida(etapaAtual)) return;
+            etapaAtual = novaEtapa;
+            atualizarUI();
+        }
+    </script>
+    <script src="/static/matricula.js"></script>
+</body>
+
+</html>
